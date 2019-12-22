@@ -9,7 +9,7 @@ class UserBehavior(TaskSet):
 
     def login(self):
         self.client.post("/login",
-                         {"username":"ellen_key",
+                         {"username":"ellen",
                           "password":"education"})
 
     @task
@@ -20,7 +20,7 @@ class UserBehavior(TaskSet):
     def profile(self):
         self.client.get("/profile")
 
-class WebsiteUser(FastHttpLocust):
+class WebsiteUser(HttpLocust):
     host = "https://google.com"
     task_set = UserBehavior
     min_wait = 1000
