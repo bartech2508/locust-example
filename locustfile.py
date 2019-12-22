@@ -20,7 +20,7 @@ class UserBehavior(TaskSet):
     def profile(self):
         self.client.get("/profile")
 
-class WebsiteUser(HttpLocust):
+class WebsiteUser(FastHttpLocust):
     host = "https://google.com"
     task_set = UserBehavior
     min_wait = 1000
